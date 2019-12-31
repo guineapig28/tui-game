@@ -6,6 +6,7 @@
 """ Terminal Game """
 
 import curses
+import random
 
 def mainloop(scr):
     """ main envent loop """
@@ -13,7 +14,9 @@ def mainloop(scr):
     yvel = 0
     y = 10
     x = 10
-    brake = 10
+    xtarget = random.randint(0,50)
+    ytarget = random.randint(0,25)
+    brake = 2
 
     # Hide the cursor
     curses.curs_set(0)
@@ -52,10 +55,16 @@ def mainloop(scr):
         x = x + xvel
         y = y + yvel
 
+        # Check if we're at the target
+        if x == xtarget and y == ytarget:
+            xtarget = random.randint(0,50)
+            ytarget = random.randint(0,25)
+
         scr.erase()
 
         # print something at position x, y
         scr.addstr(y, x, "Z")
+        scr.addstr(ytarget, xtarget, "T")
 
         scr.addstr(0, 0, "ch={} x={} y={} xvel={} yvel={} brake={}".format(ch, x, y, xvel, yvel, brake))
         scr.refresh()
