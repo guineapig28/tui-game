@@ -1,11 +1,15 @@
 # A simple terminal game
 
-The controls:
+## Controls
 
-W: slow down
-S: speed up
-UP: move up
-DOWN: move down
-LEFT: move left
-RIGHT: move right
-SPACE: stop
+| Key   | Action     |
+| ----- | ---------- |
+| w     | slow down  |
+| s     | speed up   |
+| UP    | move up    |
+| DOWN  | move down  |
+| LEFT  | move left  |
+| RIGHT | move right |
+| SPACE | stop       |
+
+
