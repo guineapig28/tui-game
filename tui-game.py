@@ -1,20 +1,24 @@
 #!/usr/bin/env python3
 
+# pylint: disable=invalid-name
+# pylint: disable=line-too-long
+
+""" Terminal Game """
+
 import curses
 
-
-
-
 def mainloop(scr):
+    """ main envent loop """
     xvel = 0
     yvel = 0
     y = 10
     x = 10
     brake = 10
+
     # Hide the cursor
     curses.curs_set(0)
 
-    scr.addstr(y,x, "Z")
+    scr.addstr(y, x, "Z")
     while True:
 
         # Wait one second for user input
@@ -24,8 +28,6 @@ def mainloop(scr):
         # ch gets value of pressed key
         ch = scr.getch()
 
-#        if ch == -1:        # no key was pressed
-#            x = x + 1
         if ch == 113:       # q=quit
             break
         elif ch == 258:
@@ -50,16 +52,12 @@ def mainloop(scr):
         x = x + xvel
         y = y + yvel
 
-
-
-
         scr.erase()
 
         # print something at position x, y
-        scr.addstr(y,x, "Z")
+        scr.addstr(y, x, "Z")
 
-        scr.addstr(0,0,"ch={} x={} y={} xvel={} yvel={} brake={}".format(ch, x, y, xvel, yvel,brake))
+        scr.addstr(0, 0, "ch={} x={} y={} xvel={} yvel={} brake={}".format(ch, x, y, xvel, yvel, brake))
         scr.refresh()
-     
-curses.wrapper(mainloop)
 
+curses.wrapper(mainloop)
