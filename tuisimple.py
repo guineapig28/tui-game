@@ -17,7 +17,7 @@ def mainloop(scr):
     xtarget = random.randint(0,50)
     ytarget = random.randint(0,25)
     brake = 2
-
+    score = 0
     # Hide the cursor
     curses.curs_set(0)
 
@@ -59,14 +59,14 @@ def mainloop(scr):
         if x == xtarget and y == ytarget:
             xtarget = random.randint(0,50)
             ytarget = random.randint(0,25)
-
+            score = score + 1
         scr.erase()
 
         # print something at position x, y
         scr.addstr(y, x, "Z")
         scr.addstr(ytarget, xtarget, "T")
 
-        scr.addstr(0, 0, "ch={} x={} y={} xvel={} yvel={} brake={}".format(ch, x, y, xvel, yvel, brake))
+        scr.addstr(0, 0, "ch={} x={} y={} xvel={} yvel={} brake={} score={}".format(ch, x, y, xvel, yvel, brake, score))
         scr.refresh()
 
 curses.wrapper(mainloop)
