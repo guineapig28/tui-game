@@ -14,6 +14,9 @@
 
 
 
+To select how much brake you want on use the number keys. 
+1 is the smallest amount of brake and 9 is the highest amount of brake.
+
 Top tip:
 
 If you want to 'get high points' in this game then you can go into the code and take away the # infront of the code that says:
