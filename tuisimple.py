@@ -14,11 +14,11 @@ def mainloop(scr):
     yvel = 0
     y = 10
     x = 5
-    xtarget = random.randint(1,79)
-    ytarget = random.randint(2,24)
+    xtarget = random.randint(1, 79)
+    ytarget = random.randint(2, 24)
     brake = 2
     score = 0
-    snake = [ [1,10], [2,10], [3,10], [4,10], [5,10] ]
+    snake = [ [1, 10], [2, 10], [3, 10], [4, 10], [5, 10] ]
 
     # Hide the cursor
     curses.curs_set(0)
@@ -54,7 +54,8 @@ def mainloop(scr):
             brake = brake + 1
         elif ch == 115:
             brake = brake - 1
-
+#       elif ch == 27:
+#           score = score + 1749
         # Advance
         x = x + xvel
         y = y + yvel
