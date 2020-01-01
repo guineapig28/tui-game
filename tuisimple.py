@@ -9,15 +9,17 @@ import curses
 import random
 
 def mainloop(scr):
-    """ main envent loop """
-    xvel = 0
+    """ main event loop """
+    xvel = 1
     yvel = 0
     y = 10
-    x = 10
-    xtarget = random.randint(0,50)
-    ytarget = random.randint(0,25)
+    x = 5
+    xtarget = random.randint(1,79)
+    ytarget = random.randint(2,24)
     brake = 2
     score = 0
+    snake = [ [1,10], [2,10], [3,10], [4,10], [5,10] ]
+
     # Hide the cursor
     curses.curs_set(0)
 
@@ -52,6 +54,8 @@ def mainloop(scr):
             brake = brake + 1
         elif ch == 115:
             brake = brake - 1
+
+        # Advance
         x = x + xvel
         y = y + yvel
 
@@ -65,6 +69,12 @@ def mainloop(scr):
         # print something at position x, y
         scr.addstr(y, x, "Z")
         scr.addstr(ytarget, xtarget, "T")
+
+        # draw snake
+        snake.pop(0)
+        snake.append([x,y])
+        for sx, sy in snake:
+            scr.addstr(sy, sx, "z")
 
         scr.addstr(0, 0, "ch={} x={} y={} xvel={} yvel={} brake={} score={}".format(ch, x, y, xvel, yvel, brake, score))
         scr.refresh()
