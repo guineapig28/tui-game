@@ -50,10 +50,24 @@ def mainloop(scr):
         elif ch == 32:
             xvel = 0
             yvel = 0
-        elif ch == 119:
-            brake = brake + 1
-        elif ch == 115:
-            brake = brake - 1
+        elif ch == 49:
+            brake = 1
+        elif ch == 50:
+            brake = 2
+        elif ch == 51:
+            brake = 3
+        elif ch == 52:
+            brake = 4
+        elif ch == 53:
+            brake = 5
+        elif ch == 54:
+            brake = 6
+        elif ch == 55:
+            brake = 7
+        elif ch == 56:
+            brake = 8
+        elif ch == 57:
+            brake =9
 #       elif ch == 27:
 #           score = score + 1749
         # Advance
